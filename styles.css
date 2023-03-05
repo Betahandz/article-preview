@@ -1,0 +1,242 @@
+@font-face {
+    font-family: manb;
+    src: url(font/Manrope-Bold.ttf);
+}
+
+@font-face {
+    font-family: mans;
+    src: url(font/Manrope-Medium.ttf);
+}
+:root {
+    /* typography */
+    --big: manb;
+    --small: mans;
+
+    /* color */
+    --vdgb: hsl(217, 19%, 35%);
+    --ddb: hsl(214, 17%, 51%);
+    --gb: hsl(212, 23%, 69%);
+    --lgb: hsl(210, 46%, 95%);
+}
+
+html {
+    font-size: 13px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--lgb);
+    display: grid;
+    place-items: center;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 650px;
+    height: 250px;
+    background-color: #fff;
+    display: flex;
+    align-items: stretch;
+    border-radius: 15px;
+}
+
+.left {
+    width: 40%;
+    height: inherit;
+}
+
+.left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 0%;
+    border-radius: 5px 0 0 5px;
+}
+
+.right {
+    width: 65%;
+    height: inherit;
+    padding: 25px 0;
+}
+
+.main {
+    width: 100%;
+    padding: 0 25px;
+}
+
+.right .title {
+    font-family: var(--big);
+    font-size: 19px;
+    color: var(--vdgb);
+    width: calc(100% - 20px);
+}
+
+.right .text {
+    color: var(--ddb);
+    font-family: var(--small);
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.asidediv {
+    position: relative;
+    height: 50px;
+    margin: 15px 0;
+}
+
+.desktopdiv {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 0 25px;
+}
+
+.profilePic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profilePic img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.profName {
+    color: var(--vdgb);
+    font-family: var(--small);
+    font-size: 12px;
+}
+
+.date {
+    font-family: var(--small);
+    color: var(--gb);
+}
+
+.desktopSocial {
+    height: 50px;
+    width: 60%;
+    background-color: var(--vdgb);
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    justify-content: space-between;
+    gap: 10px;
+    position: absolute;
+    top: -130%;
+    right: -50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    z-index: 3;
+}
+
+
+
+.desktopSocial img {
+    cursor: pointer;
+}
+
+.share {
+    text-transform: uppercase;
+    color: var(--gb);
+    font-size: 17px;
+    font-family: var(--big);
+    cursor: pointer;
+}
+
+.popout {
+    width: 20px;
+    height: 20px;
+    background-color: var(--vdgb);
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: 2;
+}
+
+
+
+.toggleSocial {
+    background-color: var(--lgb);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 4;
+}
+
+
+/********* CLASSLIST TO BE ADDED FOR FUNCTIONALITY *********/
+.hide {
+    display: none;
+}
+
+.activebtn {
+    background-color: white;
+}
+
+/******************* MEDIA QUERY ************/
+@media screen and (max-width: 375px) {
+    .desktopSocial {
+        top: 0;
+        height: 100%;
+        right: 0;
+        width: 100%;
+        transform: unset;
+        justify-content: flex-start;
+        gap: 30px;
+    }
+
+    .main {
+        padding-bottom: 0;
+    }
+
+    .asidediv {
+        height: 60px;
+        display: flex;
+        align-items: center;
+    }
+
+    .wrapper {
+        height: 86vh;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    .left, .right {
+        width: 100%;
+    }
+    
+    .left img {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .right .title {
+        font-size: 17px;
+        width: 100%;
+    }
+
+    .right .text {
+        width: calc(100% - 30px);
+    }
+
+    .popout {
+        display: none;
+    }
+}
