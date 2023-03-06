@@ -192,7 +192,7 @@ body {
 }
 
 /******************* MEDIA QUERY ************/
-@media (max-width: 375px) {
+@media (max-width: 425px) and (min-width: 375px) {
     .desktopSocial {
         top: 0;
         height: 100%;
